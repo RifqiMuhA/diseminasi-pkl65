@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Aceh",
+        "province": "Aceh"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [95.2, 5.8],
+            [97.8, 5.8],
+            [98.2, 4.0],
+            [97.5, 2.5],
+            [95.5, 2.0],
+            [95.0, 3.5],
+            [95.2, 5.8]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sumatera Utara",
+        "province": "Sumatera Utara"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [97.5, 2.5],
+            [100.0, 2.8],
+            [100.2, 1.2],
+            [98.8, 0.5],
+            [98.0, 1.0],
+            [97.5, 2.5]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sumatera Barat",
+        "province": "Sumatera Barat"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [98.8, 0.5],
+            [101.5, 0.2],
+            [101.8, -1.5],
+            [100.5, -2.0],
+            [99.0, -1.2],
+            [98.8, 0.5]
+          ]
+        ]
+      }
+    }
+  ]
+}
