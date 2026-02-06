@@ -679,24 +679,28 @@ function Findings() {
   useEffect(() => {
     let scrollTimeout;
     let lastScrollTime = 0;
+    let scrollDelta = 0;
 
     const handleScroll = (e) => {
       // Only handle scroll if we're in the map section
-      if (!mapContainer.current) return;
-      
-      const rect = mapContainer.current.getBoundingClientRect();
-      const isInMapSection = rect.top < window.innerHeight && rect.bottom > 0;
-      
+      if (!mapSection.current) return;
+
+      const rect = mapSection.current.getBoundingClientRect();
+      const isInMapSection = rect.top <= 0 && rect.bottom > 0;
+
       if (!isInMapSection) return;
 
+      scrollDelta += e.deltaY;
       const currentTime = Date.now();
-      if (currentTime - lastScrollTime < 800) return;
+
+      if (currentTime - lastScrollTime < 600) return;
       lastScrollTime = currentTime;
 
       clearTimeout(scrollTimeout);
       scrollTimeout = setTimeout(() => {
-        const direction = e.deltaY > 0 ? 1 : -1;
-        
+        const direction = scrollDelta > 0 ? 1 : -1;
+        scrollDelta = 0;
+
         if (direction > 0) {
           // Scroll down: points → districts → damage → next region
           if (viewMode === 'points') {
@@ -723,17 +727,14 @@ function Findings() {
       }, 50);
     };
 
-    if (mapContainer.current) {
-      mapContainer.current.addEventListener('wheel', handleScroll, { passive: true });
-    }
+    // Use window scroll listener for better detection
+    window.addEventListener('wheel', handleScroll, { passive: true });
 
     return () => {
-      if (mapContainer.current) {
-        mapContainer.current.removeEventListener('wheel', handleScroll);
-      }
+      window.removeEventListener('wheel', handleScroll);
       clearTimeout(scrollTimeout);
     };
-  }, [activeRegion, viewMode, regionsData.length]);
+  }, [activeRegion, viewMode, regionsData.length, mapSection]);
 
   // Animate facts section
   useEffect(() => {
@@ -1188,7 +1189,57 @@ function Findings() {
     }
   }, [activeImpactRegion, districtsData]);
 
-  // Animate floating cards entrance
+  // Animate damage cards entrance when viewMode changes to 'damage'
+  useEffect(() => {
+    if (viewMode !== 'damage') return;
+
+    const damageCardsContainer = document.querySelector('.damage-cards-container');
+    if (!damageCardsContainer) return;
+
+    const statsCard = damageCardsContainer.querySelector('.damage-stats-card');
+    const photoCard = damageCardsContainer.querySelector('.photo-condition-card');
+
+    // Animate stats card - slide from left
+    if (statsCard) {
+      gsap.fromTo(
+        statsCard,
+        {
+          opacity: 0,
+          x: -150,
+          scale: 0.85
+        },
+        {
+          opacity: 1,
+          x: 0,
+          scale: 1,
+          duration: 0.7,
+          ease: 'power3.out'
+        }
+      );
+    }
+
+    // Animate photo card - slide from right
+    if (photoCard) {
+      gsap.fromTo(
+        photoCard,
+        {
+          opacity: 0,
+          x: 150,
+          scale: 0.85
+        },
+        {
+          opacity: 1,
+          x: 0,
+          scale: 1,
+          duration: 0.7,
+          delay: 0.1,
+          ease: 'power3.out'
+        }
+      );
+    }
+  }, [viewMode]);
+
+  // Animate floating cards entrance in impact section
   useEffect(() => {
     if (!impactSection.current) return;
 
@@ -1601,7 +1652,7 @@ function Findings() {
       </section>
 
       {/* MAP SECTION */}
-      <section ref={mapSection} className="findings-container">
+      <section ref={mapSection} className="findings-container map-section-container">
         {/* Map Container */}
         <div ref={mapContainer} className="map-fullscreen" />
 
