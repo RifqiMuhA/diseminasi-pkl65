@@ -1,0 +1,173 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [95.3, 5.5]
+      },
+      "properties": {
+        "id": "GT001",
+        "location": "Banda Aceh",
+        "surveyor": "Tim A",
+        "date": "2026-01-15",
+        "category": "Permukiman"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [96.2, 4.8]
+      },
+      "properties": {
+        "id": "GT002",
+        "location": "Aceh Besar",
+        "surveyor": "Tim A",
+        "date": "2026-01-16",
+        "category": "Pertanian"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [97.1, 3.6]
+      },
+      "properties": {
+        "id": "GT003",
+        "location": "Aceh Tengah",
+        "surveyor": "Tim B",
+        "date": "2026-01-17",
+        "category": "Hutan"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [98.6, 3.5]
+      },
+      "properties": {
+        "id": "GT004",
+        "location": "Medan",
+        "surveyor": "Tim C",
+        "date": "2026-01-18",
+        "category": "Urban"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [99.2, 2.8]
+      },
+      "properties": {
+        "id": "GT005",
+        "location": "Pematang Siantar",
+        "surveyor": "Tim C",
+        "date": "2026-01-19",
+        "category": "Permukiman"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [98.3, 2.0]
+      },
+      "properties": {
+        "id": "GT006",
+        "location": "Toba Samosir",
+        "surveyor": "Tim D",
+        "date": "2026-01-20",
+        "category": "Danau"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [99.8, 1.5]
+      },
+      "properties": {
+        "id": "GT007",
+        "location": "Labuhan Batu",
+        "surveyor": "Tim D",
+        "date": "2026-01-21",
+        "category": "Perkebunan"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [100.3, -0.3]
+      },
+      "properties": {
+        "id": "GT008",
+        "location": "Padang",
+        "surveyor": "Tim E",
+        "date": "2026-01-22",
+        "category": "Pesisir"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [100.8, -0.8]
+      },
+      "properties": {
+        "id": "GT009",
+        "location": "Bukittinggi",
+        "surveyor": "Tim E",
+        "date": "2026-01-23",
+        "category": "Perbukitan"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [99.6, -1.2]
+      },
+      "properties": {
+        "id": "GT010",
+        "location": "Pesisir Selatan",
+        "surveyor": "Tim F",
+        "date": "2026-01-24",
+        "category": "Pesisir"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [97.8, 4.2]
+      },
+      "properties": {
+        "id": "GT011",
+        "location": "Takengon",
+        "surveyor": "Tim B",
+        "date": "2026-01-25",
+        "category": "Pegunungan"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [96.8, 5.2]
+      },
+      "properties": {
+        "id": "GT012",
+        "location": "Lhokseumawe",
+        "surveyor": "Tim A",
+        "date": "2026-01-26",
+        "category": "Industri"
+      }
+    }
+  ]
+}
