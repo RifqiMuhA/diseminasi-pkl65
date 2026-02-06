@@ -12,8 +12,11 @@
   "dependencies": {
     "framer-motion": "^12.31.1",
     "gsap": "^3.14.2",
+    "lucide-react": "^0.563.0",
+    "maplibre-gl": "^5.17.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-map-gl": "^8.1.0",
     "react-router-dom": "^7.13.0",
     "zustand": "^5.0.11"
   },
