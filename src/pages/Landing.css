@@ -1,10 +1,7 @@
-/* =========================================
-   1. IMPORT FONTS (WAJIB PALING ATAS)
-   ========================================= */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap');
 
 /* =========================================
-   2. BASE STYLES (KODE ORIGINAL)
+   BASE STYLES (KODE ORIGINAL)
    ========================================= */
 .landing {
   min-height: 100vh;
@@ -25,7 +22,7 @@
 }
 
 /* =========================================
-   3. OVERRIDE STYLES (FINAL DESIGN)
+  OVERRIDE STYLES 
    ========================================= */
 
 /* --- LAYOUT UTAMA --- */
@@ -81,14 +78,13 @@
 }
 
 .plane-img {
-  /* Pesawat diperbesar agar memenuhi layar saat lewat */
   width: 110vh; 
   height: auto;
   transform: translateX(-100vw) rotate(90deg);
   filter: drop-shadow(0 0 20px rgba(0,0,0,0.5));
 }
 
-/* --- PETA INDONESIA (KANAN) --- */
+/* --- PETA INDONESIA --- */
 .map-layer {
   position: absolute !important;
   top: 0 !important;
@@ -114,7 +110,6 @@
   right: -100% !important; 
   
   opacity: 0.9 !important;
-  /* Efek warna sepia/emas agar menyatu dengan tema */
   filter: sepia(0.6) hue-rotate(5deg) !important; 
   mix-blend-mode: screen !important; 
 }
@@ -130,33 +125,28 @@
   opacity: 0.9 !important;
   filter: sepia(0.6) hue-rotate(5deg) !important; 
   mix-blend-mode: screen !important;
-  z-index: 1; /* Di bawah SVG */
+  z-index: 1;
 }
 
-/* SVG Overlay (Lapisan Jalur Pesawat) */
 .routes-svg {
   position: absolute !important;
-  z-index: 2; /* Di atas gambar peta */
-  
-  /* Ukuran SVG harus sama persis dengan gambar peta */
-  /* Agar koordinat garisnya pas dengan pulaunya */
+  z-index: 2; 
+
   height: 80vh !important; 
-  width: auto !important; /* Biarkan lebar menyesuaikan aspek rasio */
-  
-  /* Posisi disamakan dengan .base-map */
+  width: auto !important; 
+
   top: 50% !important;
   transform: translateY(-50%) !important;
   right: -25% !important;
   
-  overflow: visible !important; /* Biar pesawat ga kepotong kalau belok */
+  overflow: visible !important;
 }
 
-/* Styling Garis Putus-putus */
 .flight-path {
   fill: none;
-  stroke: #F3EAD2; /* Warna Krem */
+  stroke: #F3EAD2; 
   stroke-width: 3;
-  stroke-dasharray: 2500, 2500; /* Efek putus-putus (8px garis, 8px kosong) */
+  stroke-dasharray: 2500, 2500;
   opacity: 1;
   stroke-linecap: round;
 }
@@ -178,7 +168,6 @@
   filter: drop-shadow(0 0 8px rgba(243, 234, 210, 0.9)); /* Efek glowing */
 }
 
-/* Sedikit membesarkan ukuran pesawat */
 .mini-plane path {
   transform: scale(1.5); 
 }
@@ -188,14 +177,11 @@
   position: relative;
   z-index: 10;
   max-width: 650px !important;
-  color: #F3EAD2; /* Warna Krem */
-
-  /* FLEXBOX: Menjamin tombol ada di bawah teks */
+  color: #F3EAD2; 
   display: flex !important;
   flex-direction: column !important;
   align-items: flex-start !important;
   
-  /* Padding bawah besar (5rem) agar bayangan tombol tidak terpotong */
   padding: 1rem 1rem 5rem 3rem !important;
 }
 
@@ -275,13 +261,12 @@
 }
 
 /* =========================================
-   4. RESPONSIVE (ROTATE WARNING)
+   RESPONSIVE (ROTATE WARNING)
    ========================================= */
 .rotate-warning {
   display: none;
 }
 
-/* Jika layar kecil (HP) DAN posisi Portrait (Berdiri) */
 @media screen and (max-width: 900px) and (orientation: portrait) {
   
   .rotate-warning {
@@ -322,7 +307,7 @@
     100% { transform: rotate(-90deg); }
   }
 
-  /* Sembunyikan konten asli agar bersih */
+  /* Sembunyikan konten asli */
   .landing-content,
   .map-layer,
   .bg-layer,
