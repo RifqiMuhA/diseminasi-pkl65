@@ -2262,12 +2262,17 @@ function Journey() {
         <p className="beat-caption handwritten final">Terima kasih atas pengorbanan kalian.</p>
       </div>
 
-      {/* NAVIGATION
+      {/* NAVIGATION */}
       <div className="story-navigation">
-        <Link to="/" className="nav-btn back">
-          ← Kembali
+        <Link to="/" className="nav-btn nav-btn-prev">
+          <span className="nav-arrow">←</span>
+          <span className="nav-text">Sebelumnya</span>
         </Link>
-      </div> */}
+        <Link to="/findings" className="nav-btn nav-btn-next">
+          <span className="nav-text">Berikutnya</span>
+          <span className="nav-arrow">→</span>
+        </Link>
+      </div>
     </div>
   );
 }
